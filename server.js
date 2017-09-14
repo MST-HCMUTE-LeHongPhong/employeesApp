@@ -19,19 +19,19 @@ app.use(express.static(__dirname + '/client'))
 
 app.get('/api/employees', function(req, res) {
     console.log('-------------------------')    
-    console.log('begin GET req')
+    console.log('   begin GET req')
     Employee.find(function(err, employees) {
         if (err){
             res.send(err)
-            console.log('GET failed')
+            console.log('   GET failed')
             console.log('-------------------------')
         }else {
             res.json(employees)
-            console.log('GET completed')
+            console.log('   GET completed')
             console.log('-------------------------')
         }
     })
-    console.log('end GET req')
+    console.log('   end GET req')
 })
 
 app.get('/api/employees/:id', function(req, res) {
